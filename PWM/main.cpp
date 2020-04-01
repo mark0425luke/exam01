@@ -9,7 +9,7 @@ AnalogOut Aout(DAC0_OUT);
 int main()
 {
 
-	/*
+	
 	for (i = 0; i < sample; i++)
 	{
 	     ADCdata[i] = Ain;
@@ -20,22 +20,24 @@ int main()
      pc.printf("%1.3f\r\n", ADCdata[i]);
      
    }
-   */
+   
 
-
+  	int j=0;
+	PWM1=Ain;
+	
 	while(1)
   	{
 	  	for(int i=0; i<=10; i++)
 	  	{
 	  		PWM1.period(i/10);
-	  		PWM1 = Ain;
+	  		//PWM1 = Ain;
 	  		wait(0.1);
 	  	}
 	    
 	    for(int i=1; i>=0; i--)
 	    {
 	    	PWM1.period(i/10);
-	  		PWM1 = Ain;
+	  		//PWM1 = Ain;
 	    	wait(0.1);
 	    }
 	}
